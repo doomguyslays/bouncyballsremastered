@@ -75,6 +75,29 @@ document.addEventListener('touchmove', function(event) {
   x = event.touches[0].clientX - 25;
   y = event.touches[0].clientY - 25;
 });
+
+var version = document.createElement('div');
+version.style.position = 'absolute';
+version.style.top = '50px';
+version.style.right = '50px';
+version.style.color = 'black';
+version.style.fontSize = '10px';
+version.innerHTML = 'v1.0.7';
+document.body.appendChild(version);
+
+var copyright = document.createElement('div');
+copyright.style.position = 'absolute';
+copyright.style.bottom = '50px';
+copyright.style.right = '50px';
+copyright.style.color = 'black';
+copyright.style.fontSize = '10px';
+copyright.innerHTML = '&copy;jafetegill 2023';
+document.body.appendChild(copyright);
+
+setInterval(moveBall, 1000 / 60);
+
+document.body.style.margin = '0px';
+document.body.style.overflow = 'hidden';
 });
         </script>
     </head>
