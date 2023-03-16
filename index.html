@@ -9,8 +9,8 @@ ball.style.height = '50px';
 ball.style.backgroundColor = 'red';
 ball.style.borderRadius = '50%';
 ball.style.position = 'absolute';
-ball.style.top = '50px';
-ball.style.left = '50px';
+ball.style.top = '0px';
+ball.style.left = '0px';
 document.body.appendChild(ball);
 
 var x = 0;
@@ -44,9 +44,9 @@ setInterval(moveBall, 10);
 ball.style.boxShadow = '0px 0px 10px black';
 
 var tutorial = document.createElement('div');
-tutorial.style.position = 'fixed';
-tutorial.style.top = '0px';
-tutorial.style.left = '0px';
+tutorial.style.position = 'absolute';
+tutorial.style.top = '64px';
+tutorial.style.left = '60%x';
 tutorial.style.width = '90%';
 tutorial.style.height = '94%';
 tutorial.style.backgroundColor = 'rgba(5, 5, 5, 5.5)';
@@ -82,7 +82,7 @@ version.style.bottom = '8px';
 version.style.right = '260px';
 version.style.color = 'black';
 version.style.fontSize = '10px';
-version.innerHTML = 'v1.0.8';
+version.innerHTML = 'v1.0.7';
 document.body.appendChild(version);
 
 var copyright = document.createElement('div');
