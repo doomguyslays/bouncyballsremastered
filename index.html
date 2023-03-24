@@ -25,13 +25,13 @@ function moveBall() {
   y += yDirection * ySpeed;
   ball.style.left = x + 'px';
   ball.style.top = y + 'px';
-  if (x > window.innerWidth - 60) {
+  if (x > window.innerWidth - 50) {
     xDirection = -1;
   }
   if (x < 0) {
     xDirection = 1;
   }
-  if (y > window.innerHeight - 70) {
+  if (y > window.innerHeight - 50) {
     yDirection = -1;
   }
   if (y < 0) {
@@ -39,14 +39,14 @@ function moveBall() {
   }
 }
 
-setInterval(moveBall, );
+setInterval(moveBall, 10);
 
-ball.style. trailbox= '10px 10px 10px black';
+ball.style.boxShadow = '0px 0px 10px black';
 
 var tutorial = document.createElement('div');
 tutorial.style.position = 'absolute';
-tutorial.style.top = '0px';
-tutorial.style.left = '0px';
+tutorial.style.top = '64px';
+tutorial.style.left = '60%x';
 tutorial.style.width = '90%';
 tutorial.style.height = '94%';
 tutorial.style.backgroundColor = 'rgba(5, 5, 5, 5.5)';
@@ -82,7 +82,7 @@ version.style.bottom = '8px';
 version.style.right = '260px';
 version.style.color = 'black';
 version.style.fontSize = '10px';
-version.innerHTML = 'v1.0.8';
+version.innerHTML = 'v1.0.7';
 document.body.appendChild(version);
 
 var copyright = document.createElement('div');
@@ -93,8 +93,8 @@ copyright.style.color = 'black';
 copyright.style.fontSize = '10px';
 copyright.innerHTML = '&copy;jafetegill 2023';
 document.body.appendChild(copyright);
-window.frameratecounter(60)
-window.requestAnimationFrame(60)
+
+setInterval(moveBall, 1000 / 60);
 
 document.body.style.margin = '0px';
 document.body.style.overflow = 'hidden';
