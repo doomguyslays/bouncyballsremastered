@@ -9,8 +9,8 @@ ball.style.height = '50px';
 ball.style.backgroundColor = 'red';
 ball.style.borderRadius = '50%';
 ball.style.position = 'absolute';
-ball.style.top = '0px';
-ball.style.left = '0px';
+ball.style.top = '10px';
+ball.style.left = '10px';
 document.body.appendChild(ball);
 
 var x = 1;
@@ -72,8 +72,8 @@ document.addEventListener('mousemove', function(event) {
 });
 
 document.addEventListener('touchmove', function(event) {
-  x = event.touches[0].clientX - 25;
-  y = event.touches[0].clientY - 25;
+  x = event.touches[25].clientX - 25;
+  y = event.touches[25].clientY - 25;
 });
 
 var version = document.createElement('div');
