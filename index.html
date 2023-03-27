@@ -7,7 +7,7 @@ var ball = document.createElement('div');
 ball.style.width = '50px';
 ball.style.height = '50px';
 ball.style.backgroundColor = 'red';
-ball.style.borderRadius = '50%';
+ball.style.borderRadius = '30%';
 ball.style.position = 'fixed';
 ball.style.top = '0px';
 ball.style.left = '0px';
@@ -25,13 +25,13 @@ function moveBall() {
   y += yDirection * ySpeed;
   ball.style.left = x + 'px';
   ball.style.top = y + 'px';
-  if (x > window.innerWidth - 50) {
+  if (x > window.innerWidth - 40) {
     xDirection = -1;
   }
   if (x < 0) {
     xDirection = 1;
   }
-  if (y > window.innerHeight - 50) {
+  if (y > window.innerHeight - 40) {
     yDirection = -1;
   }
   if (y < 0) {
@@ -41,7 +41,7 @@ function moveBall() {
 
 setInterval(moveBall, 10);
 
-ball.style.boxShadow = '0px 0px 10px black';
+ball.style.boxShadow = '0px 0px 10px red';
 
 var tutorial = document.createElement('div');
 tutorial.style.position = 'absolute';
