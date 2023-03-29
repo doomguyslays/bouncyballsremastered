@@ -41,28 +41,7 @@ function moveBall() {
 
 setInterval(moveBall, 10);
 
-ball.style.boxShadow = '0px 0px 10px black';
-
-var tutorial = document.createElement('div');
-tutorial.style.position = 'absolute';
-tutorial.style.top = '69px';
-tutorial.style.left = '65%x';
-tutorial.style.width = '94%';
-tutorial.style.height = '94%';
-tutorial.style.backgroundColor = 'rgba(5, 5, 5, 5.5)';
-tutorial.style.color = 'white';
-tutorial.style.fontSize = '15px';
-tutorial.style.padding = '20px';
-tutorial.innerHTML = '<p>Welcome to the bouncy balls tutorial!</p>' +
-  '<p>This is a bouncy ball. It bounces around the screen.</p>' +
-  '<p>You can change the speed of the ball by clicking on it.</p>' +
-  '<p>You can also change the color of the ball by clicking on it.</p>' +
-  '<p>Click anywhere to continue.</p>';
-document.body.appendChild(tutorial);
-
-tutorial.addEventListener('click', function() {
-  document.body.removeChild(tutorial);
-});
+ball.style.boxShadow = '0px 0px 20px red';
 
 var bounceSound = new Audio('http://www.freesound.org/data/previews/2/2705_1709-lq.mp3');
 
