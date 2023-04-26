@@ -12,7 +12,6 @@ ball.style.position = 'fixed';
 ball.style.top = '0px';
 ball.style.left = '0px';
 document.body.appendChild(ball);
-
 var x = 0;
 var y = 0;
 var xDirection = 1;
@@ -38,7 +37,30 @@ function moveBall() {
     yDirection = 1;
   }
 }
+var timer = document.createElement('div');
+timer.style.position = 'absolute';
+timer.style.top = '0px';
+timer.style.right = '0px';
+document.body.appendChild(timer);
+		
+var startTime = new Date();
+var timerInterval = setInterval(function() {
+  var currentTime = new Date();
+  var timeDifference = currentTime - startTime;
+  var seconds = Math.floor(timeDifference / 1000);
+  var milliseconds = timeDifference % 1000;
+  timer.innerHTML = seconds + '.' + milliseconds;
+}, 10);
+});
+var score = 0;
+var scoreBoard = document.createElement('div');
+scoreBoard.innerHTML = 'Score: ' + score;
+scoreBoard.style.position = 'absolute';
+scoreBoard.style.top = '0px';
+scoreBoard.style.left= '0px';
+document.body.appendChild(scoreBoard);
 
+		
 setInterval(moveBall, 12);
 
 ball.style.boxShadow = '0px 0px 10px black';
