@@ -42,25 +42,8 @@ timer.style.position = 'absolute';
 timer.style.top = '0px';
 timer.style.right = '0px';
 document.body.appendChild(timer);
-		
-var startTime = new Date();
-var timerInterval = setInterval(function() {
-  var currentTime = new Date();
-  var timeDifference = currentTime - startTime;
-  var seconds = Math.floor(timeDifference / 1000);
-  var milliseconds = timeDifference % 1000;
-  timer.innerHTML = seconds + '.' + milliseconds;
 }, 10);
 });
-var score = 0;
-var scoreBoard = document.createElement('div');
-scoreBoard.innerHTML = 'Score: ' + score;
-scoreBoard.style.position = 'absolute';
-scoreBoard.style.top = '0px';
-scoreBoard.style.left= '0px';
-document.body.appendChild(scoreBoard);
-
-		
 setInterval(moveBall, 12);
 
 ball.style.boxShadow = '0px 0px 10px black';
@@ -92,7 +75,11 @@ copyright.style.color = 'rainbow';
 copyright.style.fontSize = '10px';
 copyright.innerHTML = '&copy;jafetegill 2023';
 document.body.appendChild(copyright);
-
+<h1>Bouncy Balls Game</h1>
+	<p>Score: <span id="score">0</span></p>
+	<p>Time: <span id="timer">0</span></p>
+	<canvas id="canvas"></canvas>
+	<script>
 setInterval(moveBall, 1000 / 120);
 
 document.body.style.margin = '0px';
