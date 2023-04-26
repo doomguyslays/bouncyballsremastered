@@ -37,13 +37,6 @@ function moveBall() {
     yDirection = 1;
   }
 }
-var timer = document.createElement('div');
-timer.style.position = 'absolute';
-timer.style.top = '0px';
-timer.style.right = '0px';
-document.body.appendChild(timer);
-}, 10);
-});
 setInterval(moveBall, 12);
 
 ball.style.boxShadow = '0px 0px 10px black';
@@ -75,7 +68,6 @@ copyright.style.color = 'rainbow';
 copyright.style.fontSize = '10px';
 copyright.innerHTML = '&copy;jafetegill 2023';
 document.body.appendChild(copyright);
-<h1>Bouncy Balls Game</h1>
 	<p>Score: <span id="score">0</span></p>
 	<p>Time: <span id="timer">0</span></p>
 	<canvas id="canvas"></canvas>
