@@ -1,6 +1,16 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
+// Function to resize canvas
+function resizeCanvas() {
+  canvas.width = canvas.parentElement.offsetWidth;
+  canvas.height = canvas.parentElement.offsetHeight;
+}
+
+// Call resizeCanvas function initially and on window resize
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
 let ballpoints = 0;
 let ballCost = 10;
 
@@ -75,8 +85,11 @@ function buyBall() {
 }
 
 canvas.addEventListener('touchmove', (event) => {
-  balls[0].x = event.touches[0].clientX;
-  balls[0].y = event.touches[0].clientY;
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;  
+  const scaleY = canvas.height / rect.height;
+  balls[0].x = (event.touches[0].clientX - rect.left) * scaleX;
+  balls[0].y = (event.touches[0].clientY - rect.top) * scaleY;
 });
 
 document.getElementById('buyBallButton').addEventListener('click', buyBall);
