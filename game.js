@@ -3,8 +3,23 @@ const ctx = canvas.getContext('2d');
 
 // Function to resize canvas
 function resizeCanvas() {
+  // Store old canvas dimensions
+  let oldWidth = canvas.width;
+  let oldHeight = canvas.height;
+  
+  // Resize canvas to match its container
   canvas.width = canvas.parentElement.offsetWidth;
   canvas.height = canvas.parentElement.offsetHeight;
+  
+  // Adjust ball positions to new canvas dimensions
+  balls.forEach((ball) => {
+    ball.x = ball.x * canvas.width / oldWidth;
+    ball.y = ball.y * canvas.height / oldHeight;
+    
+    // Ensure balls stay within the canvas after resize
+    ball.x = Math.min(Math.max(ball.x, ball.radius), canvas.width - ball.radius);
+    ball.y = Math.min(Math.max(ball.y, ball.radius), canvas.height - ball.radius);
+  });
 }
 
 // Call resizeCanvas function initially and on window resize
