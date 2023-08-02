@@ -53,7 +53,7 @@ function gameLoop() {
   });
 
   drawPoints();
-  
+
   requestAnimationFrame(gameLoop);
 }
 
@@ -80,5 +80,26 @@ canvas.addEventListener('touchmove', (event) => {
 });
 
 document.getElementById('buyBallButton').addEventListener('click', buyBall);
+
+// Load the saved game state from localStorage when the page loads
+window.onload = () => {
+  const savedState = localStorage.getItem('gameState');
+  if (savedState) {
+    const { savedPoints, savedCost, savedBalls } = JSON.parse(savedState);
+    ballpoints = savedPoints;
+    ballCost = savedCost;
+    balls = savedBalls;
+  }
+};
+
+// Save the game state to localStorage every second
+setInterval(() => {
+  const gameState = {
+    savedPoints: ballpoints,
+    savedCost: ballCost,
+    savedBalls: balls
+  };
+  localStorage.setItem('gameState', JSON.stringify(gameState));
+}, 1000);
 
 gameLoop();
