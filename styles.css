@@ -5,14 +5,28 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background: #f0f0f0;
+}
+
+#gameContainer {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
 }
 
 #gameCanvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   touch-action: none; 
 }
 
 button {
   font-size: 1em;
-  margin-top: 1em;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 1em;
   padding: 0.25em 1em;
 }
