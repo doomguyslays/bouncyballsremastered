@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Red Bouncing Ball Game</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <div id="gameContainer">
-      <canvas id="gameCanvas"></canvas>
-      <button id="buyBallButton">Buy Ball</button>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="gameArea">
+        <div class="ball"></div>
     </div>
-    <script src="game.js"></script>
-  </body>
+    <div id="score">Score: 0</div>
+    <div id="highScore">High Score: 0</div>
+    <button id="startButton">Start game</button>
+    <button id="addBallButton" disabled>Add Ball (Cost: 5)</button>
+    <button id="bulkBuyButton" disabled>Bulk Buy Balls (Cost: 20)</button>
+    <script src="script.js"></script>
+</body>
 </html>
