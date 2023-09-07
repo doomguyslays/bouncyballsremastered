@@ -82,12 +82,12 @@ buyBallButton.addEventListener('click', () => {
 
 document.addEventListener('click', () => {
     score++;
-    scoreDisplay.textContent = score;
+    scoreDisplay.textContent = 'Score: ' + score; // Fix for score text overlap
     earnBallCoins(1);
 
     if (score > highscore) {
         highscore = score;
-        highscoreDisplay.textContent = highscore;
+        highscoreDisplay.textContent = 'High Score: ' + highscore; // Fix for score text overlap
     }
 });
 
