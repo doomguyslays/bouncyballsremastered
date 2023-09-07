@@ -3,10 +3,13 @@ const highscoreDisplay = document.getElementById('highscore');
 const coinDisplay = document.getElementById('ball-coins');
 const buyBallButton = document.getElementById('buy-ball-button');
 const BALL_COST = 50;
+const MAX_BALLS = 10; // Maximum number of balls on the screen
+const BALLSPEED = 5;
 
 let score = 0;
 let highscore = 0;
 let ballCoins = 0;
+let ballCount = 0;
 
 function updateCoinDisplay() {
     coinDisplay.textContent = ballCoins;
@@ -17,25 +20,19 @@ function earnBallCoins(amount) {
     updateCoinDisplay();
 }
 
-buyBallButton.addEventListener('click', () => {
-    if (ballCoins >= BALL_COST) {
-        ballCoins -= BALL_COST;
-        updateCoinDisplay();
-        createNewBall();
-    } else {
-        alert('Not enough Ball Coins to buy a ball.');
-    }
-});
-
 function createNewBall() {
+    if (ballCount >= MAX_BALLS) {
+        return; // Don't create more balls than the maximum
+    }
+
     const newBall = document.createElement('div');
     newBall.classList.add('ball');
     document.querySelector('.game-container').appendChild(newBall);
 
     const newX = Math.random() * (window.innerWidth - 50);
     const newY = Math.random() * (window.innerHeight - 50);
-    const newDx = (Math.random() - 0.5) * 10;
-    const newDy = (Math.random() - 0.5) * 10;
+    const newDx = (Math.random() - 0.5) * BALLSPEED;
+    const newDy = (Math.random() - 0.5) * BALLSPEED;
 
     newBall.style.left = newX + 'px';
     newBall.style.top = newY + 'px';
@@ -57,18 +54,33 @@ function createNewBall() {
         newBall.style.left = newX + 'px';
         newBall.style.top = newY + 'px';
 
+        count++;
+
         if (count < 1000) {
-            count++;
             requestAnimationFrame(updateBallPosition);
         } else {
             newBall.remove();
+            ballCount--;
         }
     }
 
+    ballCount++;
     updateBallPosition();
 }
 
-function updateScore() {
+buyBallButton.addEventListener('click', () => {
+    if (ballCoins >= BALL_COST && ballCount < MAX_BALLS) {
+        ballCoins -= BALL_COST;
+        updateCoinDisplay();
+        createNewBall();
+    } else if (ballCount >= MAX_BALLS) {
+        alert('You have reached the maximum number of balls on the screen.');
+    } else {
+        alert('Not enough Ball Coins to buy a ball.');
+    }
+});
+
+document.addEventListener('click', () => {
     score++;
     scoreDisplay.textContent = score;
     earnBallCoins(1);
@@ -77,6 +89,6 @@ function updateScore() {
         highscore = score;
         highscoreDisplay.textContent = highscore;
     }
-}
+});
 
 updateCoinDisplay();
