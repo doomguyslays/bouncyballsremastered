@@ -10,14 +10,6 @@ body {
     height: 100vh;
 }
 
-.ball {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    border-radius: 50%;
-}
-
 .score, .highscore {
     position: absolute;
     top: 20px;
