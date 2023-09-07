@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bouncing Ball Game with Ball Coins</title>
+    
+    <!-- Include Bootstrap CSS via CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Include your custom style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <div class="score">Score: <span id="score">0</span></div>
-        <div class="highscore">High Score: <span id="highscore">0</span></div>
-        <button id="buy-ball-button">Buy Ball (50 Ball Coins)</button>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3 text-center">
+                <div class="game-container">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="highscore">High Score: <span id="highscore">0</span></div>
+                </div>
+                <div class="coin-display">
+                    <span id="ball-coins">0</span> Ball Coins
+                </div>
+                <button id="buy-ball-button" class="btn btn-primary">Buy Ball (50 Ball Coins)</button>
+            </div>
+        </div>
     </div>
-    <div class="coin-display">
-        <span id="ball-coins">0</span> Ball Coins
-    </div>
+    
+    <!-- Include Bootstrap JavaScript and Popper.js via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Include your custom script.js -->
     <script src="script.js"></script>
 </body>
 </html>
