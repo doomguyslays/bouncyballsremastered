@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball Game with Ball Coins</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="gameArea">
+    <div class="game-container">
         <div class="ball"></div>
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="highscore">High Score: <span id="highscore">0</span></div>
     </div>
-    <div id="score">Score: 0</div>
-    <div id="highScore">High Score: 0</div>
-    <button id="startButton">Start game</button>
-    <button id="addBallButton" disabled>Add Ball (Cost: 5)</button>
-    <button id="bulkBuyButton" disabled>Bulk Buy Balls (Cost: 20)</button>
+    <div class="coin-display">
+        <span id="ball-coins">0</span> Ball Coins
+    </div>
+    <button id="buy-ball-button">Buy Ball (50 Ball Coins)</button>
     <script src="script.js"></script>
 </body>
 </html>
