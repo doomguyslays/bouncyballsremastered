@@ -1,4 +1,3 @@
-const ball = document.querySelector('.ball');
 const scoreDisplay = document.getElementById('score');
 const highscoreDisplay = document.getElementById('highscore');
 const coinDisplay = document.getElementById('ball-coins');
@@ -80,13 +79,4 @@ function updateScore() {
     }
 }
 
-function updateBallPosition() {
-    // Existing ball movement code
-}
-
-function gameLoop() {
-    updateBallPosition();
-    requestAnimationFrame(gameLoop);
-}
-
-gameLoop();
+updateCoinDisplay();
