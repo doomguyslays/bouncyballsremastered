@@ -1,56 +1,40 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-color: #f0f0f0;
 }
 
-.game-container {
+#game-container {
     position: relative;
     width: 100%;
-    height: calc(100vh - 40px); /* Adjusted to account for button height */
+    height: 100vh;
 }
 
-.score, .highscore {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    z-index: 2; /* Ensure text appears above other elements */
-}
-
-.coin-display {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    z-index: 2; /* Ensure text appears above other elements */
-}
-
-#buy-ball-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    z-index: 2; /* Ensure button appears above other elements */
-}
-
-#buy-ball-button:hover {
-    background-color: #0056b3;
-}
-
-.ball {
+#ball {
     position: absolute;
     width: 50px;
     height: 50px;
     background-color: red;
     border-radius: 50%;
-    display: none; /* Initially hidden */
-    pointer-events: none; /* Disable click on hidden balls */
+}
+
+#obstacle {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    background-color: blue;
+    bottom: 50px;
+}
+
+#score, #currency {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+}
+
+button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
